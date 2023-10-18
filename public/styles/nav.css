@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+} 
+
+  nav {
+  top: 0;
+  left: 0;
+   height: 100px;
+  width: 100%;  
+  display: flex;  
+   position: fixed; 
+   padding-top:60px; 
+   background-color: #4056A1;
+  color: #FFFFFF; 
+   display: flex;
+  justify-content: space-between;
+   align-items: center; 
+  padding: 0 1.5em; /* 1.5ems of space on the right and left*/
+  
+ }
+
+ .nav-logo {
+ 
+    font-family: 'Bungee', sans-serif;
+  
+}
+
+.nav-right {
+  float: right; 
+  padding-left: 20px;
+ 
+} 
+.nav-right i {
+  
+  color: red;
+  justify-content: center;
+  margin-left: 3em;
+  padding: 8px;
+  animation: i;
+  animation-duration: 2s;
+}  
+
+
+  .write-tweet-btn {
+  float: right;
+  cursor: pointer;
+   padding: 8px; 
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}  
+body {
+  background-image: url("45-degree-fabric-light.png");
+  background-color: #cccccc;
+ } 
+  
