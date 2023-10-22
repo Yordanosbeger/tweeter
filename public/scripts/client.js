@@ -12,6 +12,12 @@ $(document).ready(() =>{
  };
 
 const createTweetElement = function(tweet) {
+const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  console.log('text');
   const $tweet = $(`
     <article class="tweet">
       <header>
@@ -24,7 +30,8 @@ const createTweetElement = function(tweet) {
         </div>
       </header>
       <div class="tweet-content">
-        <p>${tweet.content.text}</p>
+      <!--Apply XSS-escaped content to the <p> element-->
+        <p>${escape(tweet.content.text)}</p>
       </div>
       <footer>
         <div class="icon">
@@ -48,6 +55,22 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
+const loadTweets = function() {
+  $.ajax({
+    method: "GET",
+    url: "/tweets",
+    dataType: "json",
+    success: function(tweets) {
+      renderTweets(tweets);
+    },
+     });
+};
+
+// Call loadTweets initially
+
+loadTweets();
+ 
+
 $('form').on('submit', function(event) {
    event.preventDefault();
 
@@ -64,6 +87,7 @@ $('form').on('submit', function(event) {
      alert("Tweet is too long. Please keep it within 140 characters.");
      return; // Do not submit the form
    }
+
    const data = $(this).serialize();
   
 //   // Send an AJAX POST request
@@ -77,25 +101,11 @@ $('form').on('submit', function(event) {
       loadTweets();
      }
         })
+      })
          
-      const loadTweets = function() {
-        $.ajax({
-          method: "GET",
-          url: "/tweets",
-          dataType: "json",
-          success: function(tweets) {
-            renderTweets(tweets);
-          },
-           });
-      };
-      
-      loadTweets();
-        
-       });
-       
-       setInterval(function() {
+      setInterval(function() {
         loadTweets();
       }, 30000); 
     });
   
-      
+       
