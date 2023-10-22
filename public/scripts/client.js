@@ -1,39 +1,15 @@
 
 $(document).ready(() =>{
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense, donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
 
-const renderTweets = function(tweets) {
-  const $tweetsContainer = $('#tweets-container');
-  $tweetsContainer.empty(); // Empty the container before rendering new tweets
+  const renderTweets = function(tweets) {
+   const $tweetsContainer = $('#tweets-container');
+   $tweetsContainer.empty(); 
 
   for (const tweet of tweets) {
     const $tweetElement = createTweetElement(tweet);
-    $tweetsContainer.prepend($tweetElement);
-  }
-};
+     $tweetsContainer.prepend($tweetElement);
+   }
+ };
 
 const createTweetElement = function(tweet) {
   const $tweet = $(`
@@ -53,7 +29,7 @@ const createTweetElement = function(tweet) {
       <footer>
         <div class="icon">
           <i class="far fa-comment"></i>
-          <span></span>
+          <span class="timeago">${timeago.format(tweet.created_at)}</span>
         </div>
         <div class="icon">
           <i class="fas fa-retweet"></i>
@@ -71,29 +47,36 @@ const createTweetElement = function(tweet) {
   `);
   return $tweet;
 }
-// Render the tweets
-renderTweets(data);
 
 $('form').on('submit', function(event) {
-  event.preventDefault();
+   event.preventDefault();
   
-  const data = $(this).serialize();
-  console.log(data);
-  // Send an AJAX POST request
-  $.ajax({
+   const data = $(this).serialize();
+  
+//   // Send an AJAX POST request
+   $.ajax({
     method: "POST",
     url: "/tweets",
-    data: $(this).serialize(),})
-    console.log(data);
-      });
-  });
+    data: data,
+    success: function() {
+      // After successfully creating the tweet, load and render tweets.
+       loadTweets();
+     }
+        })
+         
+      const loadTweets = function() {
+        $.ajax({
+          method: "GET",
+          url: "/tweets",
+          dataType: "json",
+          success: function(tweets) {
+            renderTweets(tweets);
+          },
+           });
+      };
+      
+      loadTweets();
+        
+       });
   
-
-
-
-
-
-
-
-
-
+      })
