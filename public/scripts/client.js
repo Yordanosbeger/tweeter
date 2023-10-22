@@ -73,7 +73,8 @@ $('form').on('submit', function(event) {
     data: data,
     success: function() {
       // After successfully creating the tweet, load and render tweets.
-       loadTweets();
+      $('#tweet-text').val('');
+      loadTweets();
      }
         })
          
@@ -91,5 +92,10 @@ $('form').on('submit', function(event) {
       loadTweets();
         
        });
+       
+       setInterval(function() {
+        loadTweets();
+      }, 30000); 
+    });
   
-      })
+      
