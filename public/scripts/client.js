@@ -50,7 +50,20 @@ const createTweetElement = function(tweet) {
 
 $('form').on('submit', function(event) {
    event.preventDefault();
-  
+
+   // Get the tweet content from the form
+   const tweetText = $('#tweet-text').val();
+
+   // Check if the tweet content is empty or exceeds 140 characters
+   if (!tweetText) {
+     alert("Tweet content is empty. Please enter your tweet.");
+     return; // Do not submit the form
+   }
+
+   if (tweetText.length > 140) {
+     alert("Tweet is too long. Please keep it within 140 characters.");
+     return; // Do not submit the form
+   }
    const data = $(this).serialize();
   
 //   // Send an AJAX POST request
