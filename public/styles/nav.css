@@ -31,6 +31,23 @@ body {
   padding-left: 20px;
  
 } 
+
+.compose-button {
+  background-color: #1da1f2; /* Button background color */
+  color: white; /* Text color */
+  border: none;
+  padding: 8px 16px; /* Adjust padding as needed */
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.compose-button:hover {
+  background-color: #0c7bb9; /* Hover background color */
+}
+
+
+
 .nav-right i {
   
   color: red;
@@ -48,7 +65,35 @@ body {
    padding: 8px; 
   border-radius: 20px;
   transition: background-color 0.3s ease;
-}  
+} 
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.scroll-button {
+  background-color: #1da1f2; /* Button background color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 50%; /* Make the button round */
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.scroll-button:hover {
+  background-color: #0c7bb9; /* Hover background color */
+}
+
+
+
+
+
+
+
 body {
   background-image: url("45-degree-fabric-light.png");
   background-color: #cccccc;

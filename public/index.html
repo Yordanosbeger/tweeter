@@ -33,7 +33,7 @@
     <nav>
       <span>tweeter</span>
       <div class="right-content">
-        <span>Write a new tweet</span>
+        <button class="compose-button">Write a new tweet</button>
         <i class="fas fa-angle-double-down"></i> <!-- This is the Font Awesome icon -->
       </div>
     </nav>
@@ -48,7 +48,10 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
+      
+
       <section class="new-tweet">
+        <div id ="error-container">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST" >
           <label for="tweet-text">What are you humming about?</label>
@@ -59,10 +62,12 @@
           </div>
         </form>
       </section>
-
+      <div class="error-message"></div>
      <section id="tweets-container">
-          
-          </section>
+      </section>
+    </div>
+    </section>
+
     </main>
   </body>
 </html>
