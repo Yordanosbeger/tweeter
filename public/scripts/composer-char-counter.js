@@ -36,6 +36,31 @@ const $newTweetSection = $('.new-tweet');
     });
   });
 
+  
+  const $scrollToTopButton = $('#scroll-to-top');
+  const $navButton = $('.compose-button');
+
+  // Initially hide the scroll-to-top button
+  $scrollToTopButton.hide();
+
+  // Show the scroll-to-top button when the user starts scrolling
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $scrollToTopButton.show();
+      $navButton.hide();
+    } else {
+      $scrollToTopButton.hide();
+      $navButton.show();
+    }
+  });
+
+  // Scroll to the top and enable the textarea on button click
+  $scrollToTopButton.click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 500, function () {
+    
+    });
+  });
+
 
 });
 
