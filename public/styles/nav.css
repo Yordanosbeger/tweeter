@@ -12,7 +12,7 @@ body {
    position: fixed; 
    padding-top:60px; 
    background-color: #4056A1;
-  color: #FFFFFF; 
+   color: #FFFFFF; 
    display: flex;
   justify-content: space-between;
    align-items: center; 

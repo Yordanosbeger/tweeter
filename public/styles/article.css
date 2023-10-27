@@ -1,3 +1,16 @@
+article {
+  padding: 10px;
+  border: 2px solid;
+  margin-bottom: 20px; 
+
+}
+
+
+
+
+
+
+
 .tweet {
   border: 1px solid #ccc;
   padding: 15px;
@@ -7,14 +20,13 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 
+
+
 .tweet:hover {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  
 }
 
-.tweet header {
-  display: flex;
-  align-items: center;
-}
 
 .tweet header .avatar {
   margin-right: 10px;
@@ -46,24 +58,21 @@
   margin: 10px 0;
 }
 
-.tweet footer {
+.tweet-footer {
   display: flex;
   justify-content: space-between;
+  min-width: 100%;
+  border-top: 4px solid #4d4b4b;
+  
 }
 
-.tweet footer .icon {
-  display: flex;
-  align-items: center;
-}
-
-.tweet footer .icon i {
-  margin-right: 5px;
-}
-
-.tweet footer .icon span {
-  margin-left: 5px;
-}
-
-.tweet footer .icon:hover {
+.tweet-icons:hover {
+  cursor: pointer;
   color: #1DA1F2;
 }
+
+
+
+
+
+

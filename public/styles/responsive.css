@@ -1,0 +1,44 @@
+/* Define mixin*/
+/*media query for mobile view(les than 767px)*/
+@media only screen and (max-width: 767px) {
+  nav{
+    background-color:transparent;
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem
+  }
+  
+}
+
+/*Media query for tablet styles(768px to 1024px)*/
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: #4056a1;
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem
+  }
+}
+
+
+
+/*Media query for desktop view (greater than 1024px)*/ 
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    width: 23.3%;
+    max-height: 320;
+    margin: 1em;
+    margin-top: 8em;
+  }
+  main{
+    width: 66.7%;
+    max-width: 1024px;
+    margin-top: 6em;
+  }
+
+}

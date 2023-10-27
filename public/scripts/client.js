@@ -2,6 +2,7 @@ $(document).ready(() => {
   const renderTweets = function(tweets) {
     const $tweetsContainer = $('#tweets-container');
     $tweetsContainer.empty();
+
     for (const tweet of tweets) {
       const $tweetElement = createTweetElement(tweet);
       $tweetsContainer.prepend($tweetElement);
@@ -30,23 +31,14 @@ $(document).ready(() => {
           <!-- Apply XSS-escaped content to the <p> element -->
           <p>${escape(tweet.content.text)}</p>
         </div>
-        <footer>
-          <div class="icon">
-            <i class="far fa-comment"></i>
-            <span class="timeago">${timeago.format(tweet.created_at)}</span>
+        <footer class=" tweet-footer">
+          <span class="timeago">${timeago.format(tweet.created_at)}</span>
+           <div class=" tweet-icons">
+           <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fas fa-retweet"></i>
+            <i class="fa-solid fas fa-heart"></i>
           </div>
-          <div class="icon">
-            <i class="fas fa-retweet"></i>
-            <span></span>
-          </div>
-          <div class="icon">
-            <i class="far fa-heart"></i>
-            <span></span>
-          </div>
-          <div class="icon">
-            <i class="fas fa-share"></i>
-          </div>
-        </footer>
+          </footer>
       </article>
     `);
 
