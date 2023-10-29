@@ -1,12 +1,12 @@
 $(document).ready(() => {
+
   const renderTweets = function(tweets) {
     const $tweetsContainer = $('#tweets-container');
     $tweetsContainer.empty();
-//$('#tweets-container').empty();
+
     for (const tweet of tweets) {
       const $tweetElement = createTweetElement(tweet);
       $tweetsContainer.prepend($tweetElement);
-      //createTweetElement(tweet);
     }
   };
 
@@ -41,7 +41,7 @@ $(document).ready(() => {
           </footer>
       </article>
     `;
-    //$('#tweets-container').prepend($tweet);
+    
     return $tweet;
   };
 

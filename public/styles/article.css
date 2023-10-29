@@ -1,14 +1,14 @@
 article {
   padding: 10px;
   border: 2px solid;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 
 }
 
-.tweet-header{
+.tweet-header {
   display: flex;
   align-items: center;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   justify-content: space-between;
 }
 
@@ -17,14 +17,8 @@ article {
   justify-content: space-between;
   min-width: 100%;
   border-top: 4px solid #4d4b4b;
-  
+
 }
-
-
-
-
-
-
 
 .tweet-header img h3 {
   display: flex;
@@ -38,32 +32,30 @@ article {
 }
 
 
-.tweet-icons:hover{
+.tweet-icons:hover {
   cursor: pointer;
   color: #68d514;
 }
 
-.tweet-avator-box{
+.tweet-avator-box {
   display: flex;
   align-items: center;
 }
 
-.tweet-avator{
+.tweet-avator {
   height: 50px;
 }
-.handle{
-  opacity:0.4;
-  color:#4056A1;
+
+.handle {
+  opacity: 0.4;
+  color: #4056A1;
   font-weight: bolder;
 }
-.timeago{
+
+.timeago {
   font-size: small;
 }
-.tweet-container:hover{
-  box-shadow: 5px 5px 5px rgb(22,147,39);
+
+.tweet-container:hover {
+  box-shadow: 5px 5px 5px rgb(22, 147, 39);
 }
-
-
-
-
-

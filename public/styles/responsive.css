@@ -1,5 +1,5 @@
 /* Define mixin*/
-/*media query for mobile view(les than 767px)*/
+/*Media query for mobile view(less than 767px)*/
 @media only screen and (max-width: 767px) {
   nav{
     background-color:transparent;
