@@ -29,12 +29,12 @@ nav {
   padding-left: 20px;
 }
 
-.nav-right i {
+.nav-right i  {
   color: red;
   justify-content: center;
   margin-left: 3em;
   padding: 8px;
-  animation: i 2s ease infinite;
+  
 }
 
 @keyframes i {
