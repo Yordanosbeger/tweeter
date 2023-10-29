@@ -2,10 +2,11 @@ $(document).ready(() => {
   const renderTweets = function(tweets) {
     const $tweetsContainer = $('#tweets-container');
     $tweetsContainer.empty();
-
+//$('#tweets-container').empty();
     for (const tweet of tweets) {
       const $tweetElement = createTweetElement(tweet);
       $tweetsContainer.prepend($tweetElement);
+      //createTweetElement(tweet);
     }
   };
 
@@ -15,18 +16,17 @@ $(document).ready(() => {
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
+     console.log('text');
+    const $tweet = `
+      <article class="tweet-container">
+        <header class="tweet-header">
 
-    const $tweet = $(`
-      <article class="tweet">
-        <header>
-          <div class="avatar">
-            <img src="${tweet.user.avatars}" alt="Profile Image">
+          <div class="tweet-avator-box">
+            <img class="tweet-avator" src="${tweet.user.avatars}" alt="User Avatar">
+            <h5 class="tweet-username">${tweet.user.name}</h5>
           </div>
-          <div class="name-handle">
-            <h2 class="user-name">${tweet.user.name}</h2>
-            <p class="handle">${tweet.user.handle}</p>
-          </div>
-        </header>
+          <span class="handle">${tweet.user.handle}</span>
+          </header>
         <div class="tweet-content">
           <!-- Apply XSS-escaped content to the <p> element -->
           <p>${escape(tweet.content.text)}</p>
@@ -40,8 +40,8 @@ $(document).ready(() => {
           </div>
           </footer>
       </article>
-    `);
-
+    `;
+    //$('#tweets-container').prepend($tweet);
     return $tweet;
   };
 
@@ -52,6 +52,7 @@ $(document).ready(() => {
     const tweetText = $('#tweet-text').val();
     const $errorMessage = $('.error-message');
     $errorMessage.hide();
+    console.log(tweetText);
 
     // Check if the tweet content is empty or exceeds 140 characters
     if (!tweetText || tweetText.trim() === "") {
@@ -69,7 +70,9 @@ $(document).ready(() => {
       method: "POST",
       url: "/tweets",
       data: $(this).serialize(),}).then(loadTweets);
-
+       $(this)[0].reset();
+       //reset counter
+       $(this).find(".counter").text("140");
     });
   
 

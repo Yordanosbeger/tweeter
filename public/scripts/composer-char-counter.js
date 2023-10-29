@@ -20,21 +20,21 @@ $(".new-tweet").find("textarea").on("input", function() {
 });
 
 
-const $newTweetSection = $('.new-tweet');
-  const $composeButton = $('.compose-button');
+// const $newTweetSection = $('.new-tweet');
+//   const $composeButton = $('.compose-button');
 
-  // Hide the new-tweet section initially
-  $newTweetSection.slideUp(0);
+//   // Hide the new-tweet section initially
+//   $newTweetSection.slideUp(0);
 
-  // Toggle the new-tweet section on button click
-  $composeButton.click(() => {
-    $newTweetSection.slideToggle(200, function () {
-      // Automatically focus on the tweet text area when the section slides down
-      if ($newTweetSection.is(':visible')) {
-        $('#tweet-text').focus();
-      }
-    });
-  });
+//   // Toggle the new-tweet section on button click
+//   $composeButton.click(() => {
+//     $newTweetSection.slideToggle(200, function () {
+//       // Automatically focus on the tweet text area when the section slides down
+//       if ($newTweetSection.is(':visible')) {
+//         $('#tweet-text').focus();
+//       }
+//     });
+//   });
 
   
   const $scrollToTopButton = $('#scroll-to-top');

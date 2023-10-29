@@ -5,57 +5,11 @@ article {
 
 }
 
-
-
-
-
-
-
-.tweet {
-  border: 1px solid #ccc;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-
-
-.tweet:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  
-}
-
-
-.tweet header .avatar {
-  margin-right: 10px;
-}
-
-.tweet header img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.tweet header .name-handle {
+.tweet-header{
   display: flex;
-  flex-direction: column;
-}
-
-.tweet header .user-name {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.tweet header .handle {
-  margin: 0;
-  color: #555;
-}
-
-.tweet-content {
-  margin: 10px 0;
+  align-items: center;
+  margin-bottom:10px;
+  justify-content: space-between;
 }
 
 .tweet-footer {
@@ -66,11 +20,48 @@ article {
   
 }
 
-.tweet-icons:hover {
-  cursor: pointer;
-  color: #1DA1F2;
+
+
+
+
+
+
+.tweet-header img h3 {
+  display: flex;
+  justify-content: space-around;
 }
 
+
+
+.tweet-username {
+  float: right;
+}
+
+
+.tweet-icons:hover{
+  cursor: pointer;
+  color: #68d514;
+}
+
+.tweet-avator-box{
+  display: flex;
+  align-items: center;
+}
+
+.tweet-avator{
+  height: 50px;
+}
+.handle{
+  opacity:0.4;
+  color:#4056A1;
+  font-weight: bolder;
+}
+.timeago{
+  font-size: small;
+}
+.tweet-container:hover{
+  box-shadow: 5px 5px 5px rgb(22,147,39);
+}
 
 
 
