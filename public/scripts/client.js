@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     const $tweetsContainer = $('#tweets-container');
     $tweetsContainer.empty();
 
@@ -10,13 +10,13 @@ $(document).ready(() => {
     }
   };
 
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     const escape = function (str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
-     console.log('text');
+    console.log('text');
     const $tweet = `
       <article class="tweet-container">
         <header class="tweet-header">
@@ -41,46 +41,43 @@ $(document).ready(() => {
           </footer>
       </article>
     `;
-    
+
     return $tweet;
   };
 
-  $('form').on('submit', function(event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
 
-    // Get the tweet content from the form
     const tweetText = $('#tweet-text').val();
     const $errorMessage = $('.error-message');
     $errorMessage.hide();
     console.log(tweetText);
 
-    // Check if the tweet content is empty or exceeds 140 characters
     if (!tweetText || tweetText.trim() === "") {
       $errorMessage.text("Tweet content cannot be empty.").slideDown();
-      return; // Stop further execution
+      return;
     }
 
     if (tweetText.length > 140) {
       $errorMessage.text("Tweet content is too long. Maximum 140 characters allowed.").slideDown();
-      return; // Stop further execution
+      return;
     }
 
-     // Send an AJAX POST request
+    // Send an AJAX POST request
     $.ajax({
       method: "POST",
       url: "/tweets",
-      data: $(this).serialize(),}).then(loadTweets);
-       $(this)[0].reset();
-       //reset counter
-       $(this).find(".counter").text("140");
-    });
-  
+      data: $(this).serialize(),
+    }).then(loadTweets);
+    $(this)[0].reset();
+    $(this).find(".counter").text("140");
+  });
 
-  const loadTweets = function() {
+  const loadTweets = function () {
     $("tweet-text").val("");
-    $.ajax('/tweets',{method:'GET'}).then(renderTweets);
+    $.ajax('/tweets', { method: 'GET' }).then(renderTweets);
   };
-     
+
   loadTweets();
 });
 
