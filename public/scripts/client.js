@@ -53,7 +53,7 @@ $(document).ready(() => {
     $errorMessage.hide();
     console.log(tweetText);
 
-    if (!tweetText || tweetText.trim() === "") {
+    if (!tweetText) {
       $errorMessage.text("Tweet content cannot be empty.").slideDown();
       return;
     }

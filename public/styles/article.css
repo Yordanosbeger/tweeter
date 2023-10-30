@@ -35,6 +35,17 @@ article {
 .tweet-icons:hover {
   cursor: pointer;
   color: #68d514;
+  
+}
+.tweet-icons i.fa-flag:hover{
+  color: #FF5733;
+}
+.tweet-icons i.fa-retweet:hover{
+  color: #33FF57;
+
+}
+.tweet-icons i.fa-heart:hover{
+  color: #5733FF
 }
 
 .tweet-avator-box {
